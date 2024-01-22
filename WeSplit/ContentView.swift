@@ -8,24 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var name = ""
+    
     var body: some View {
         NavigationStack {
             Form {
-                Section {
-                    Text("Hello, SwiftUI!")
-                }
-                
-                Section {
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                }
-                
-                Section {
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                    Text("Hello, world!")
-                }
+                TextField("Enter your name", text: $name)
+                Text("Your name is \(name.uppercased())")
             }
             .navigationTitle("SwiftUI")
             .navigationBarTitleDisplayMode(.inline)
